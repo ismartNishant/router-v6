@@ -1,9 +1,13 @@
 import { CgClose } from "react-icons/cg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars , FaSun ,FaMoon} from "react-icons/fa";
+import { SunIcon, MoonIcon } from 'lucide-react';
+import { FaBars } from "react-icons/fa";
+
+
 const Navbar = () => {
     const [nav, setNav] = useState(false);
+    const [theme, setTheme] = useState(true);
     const HanldeNav = () => {
         setNav(!nav);
     };
@@ -48,13 +52,13 @@ const Navbar = () => {
 
                 </ol>
                 <div className="flex  items-center  gap-2">
-                    <div className="flex">
                    
-                        <FaSun size={20}/>
-                        <FaMoon size={20} />
-                    </div>
                     <NavLink to='/' className={`btn rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
                     <NavLink to='/' className={`btn bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
+                    <div className=" cursor-pointer ">
+                        {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
+                            <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
+                    </div>
                 </div>
             </div>
 
@@ -91,8 +95,9 @@ const Navbar = () => {
                         ))}
                     </ol>
                     <div className="gap-3 mt-8 flex justify-center items-center">
-                        <div>
-
+                        <div className=" cursor-pointer ">
+                            {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
+                                <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
                         </div>
                         <NavLink to='/' className={`btn rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
                         <NavLink to='/' className={`btn bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
