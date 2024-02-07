@@ -34,7 +34,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="flex min-h-[70px] items-center lg:justify-center justify-between navbar md:px-4  z-10 shadow w-full px-4 bg-white">
+        <nav className="flex min-h-[70px] sticky z-50 top-0 items-center lg:justify-center justify-between navbar md:px-4  shadow w-full px-4 bg-white">
             <div>
                 <NavLink to='/' className="text-2xl flex items-center font-bold uppercase" >
                     Your <span className="text-indigo-500 ps-2"> Logo</span>
@@ -45,16 +45,17 @@ const Navbar = () => {
             <div className="hidden lg:flex  justify-between  ">
                 <ol className=" flex md:px-32  justify-center  ">
                     {menuItems.map((item) => (
-                        <li className="nav-item text-[16px] font-medium" key={item.name}>
-                            <NavLink className={({ isActive }) => `${isActive ? "text-indigo-500" : "text-black"}`} to={item.path}>{item.name}</NavLink>
-                        </li>
+                        <NavLink key={item.name} className={({ isActive }) => `${isActive ? "text-indigo-500" : "text-black"}`} to={item.path}>
+                            <li className="nav-item text-[16px] font-medium" >{item.name} </li>
+                        </NavLink>
                     ))}
 
                 </ol>
+
                 <div className="flex  items-center  gap-2">
-                   
-                    <NavLink to='/' className={`btn rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
-                    <NavLink to='/' className={`btn bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
+
+                    <NavLink to='/' className={`btn font-medium rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
+                    <NavLink to='/' className={`btn font-medium bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
                     <div className=" cursor-pointer ">
                         {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
                             <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
@@ -88,19 +89,19 @@ const Navbar = () => {
             >
                 <div className="h-full w-full text-center pt-12 ">
                     <ol >
-                        {menuItems.map((item) => (
-                            <li className="nav-item text-[16px] font-medium" key={item.name}>
-                                <NavLink to={item.path}>{item.name}</NavLink>
-                            </li>
-                        ))}
+                    {menuItems.map((item) => (
+                        <NavLink key={item.name} className={({ isActive }) => `${isActive ? "text-indigo-500" : "text-black"}`} to={item.path}>
+                            <li className="nav-item text-[16px] font-medium" >{item.name} </li>
+                        </NavLink>
+                    ))}
                     </ol>
                     <div className="gap-3 mt-8 flex justify-center items-center">
                         <div className=" cursor-pointer ">
                             {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
                                 <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
                         </div>
-                        <NavLink to='/' className={`btn rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
-                        <NavLink to='/' className={`btn bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
+                        <NavLink to='/' className={`btn font-medium rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
+                        <NavLink to='/' className={`btn font-medium bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
                     </div>
                 </div>
 
