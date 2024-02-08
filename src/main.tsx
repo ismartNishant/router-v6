@@ -1,26 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Layout from './Components/Layout';
-import Home from './Components/Home';
-import AboutUs from './Components/AboutUs';
-import Contactus from './Components/Contactus';
-import Github from './Components/Github';
+import App from './App';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />} >
-      <Route path="" element={<Home />} />
-      <Route path='/about' element={<AboutUs />}> </Route>
-      <Route path='/contact' element={<Contactus />}> </Route>
-      <Route path='/github' element={<Github />}> </Route>
-    </Route>
-  )
-)
+
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>,
 )

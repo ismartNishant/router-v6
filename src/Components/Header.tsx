@@ -1,13 +1,11 @@
 import { CgClose } from "react-icons/cg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { SunIcon, MoonIcon } from 'lucide-react';
 import { FaBars } from "react-icons/fa";
 
 
 const Header = () => {
   const [nav, setNav] = useState(false);
-  const [theme, setTheme] = useState(true);
   const HanldeNav = () => {
     setNav(!nav);
   };
@@ -59,10 +57,7 @@ const Header = () => {
           <div className="hidden lg:flex   items-center  gap-2">
             <NavLink to='/' className={`btn font-medium rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
             <NavLink to='/' className={`btn font-medium bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
-            <div className=" cursor-pointer ">
-              {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
-                <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
-            </div>
+           
           </div>
 
           {/* hamburger icon */}
@@ -98,10 +93,7 @@ const Header = () => {
                 ))}
               </ol>
               <div className="gap-3 mt-8 flex justify-center items-center">
-                <div className=" cursor-pointer ">
-                  {theme ? <SunIcon size={38} className="p-2 bg-yellow-300 rounded-full" onClick={() => setTheme(!theme)} /> :
-                    <MoonIcon size={38} className="p-2 bg-sky-300 rounded-full" onClick={() => setTheme(!theme)} />}
-                </div>
+                
                 <NavLink to='/' className={`btn font-medium rounded-sm hover:bg-indigo-800 hover:border-indigo-500 hover:text-white`}> Log in</NavLink>
                 <NavLink to='/' className={`btn font-medium bg-indigo-500 rounded-sm   hover:bg-indigo-800 text-white`}> Get Started</NavLink>
               </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 import { BiLogoPlayStore } from 'react-icons/bi';
 
@@ -14,7 +13,7 @@ const Home = () => {
                         </h2>
 
                         <Link
-                            className="inline-flex text-white items-center px-6 py-3 font-medium bg-indigo-500 rounded-sm hover:opacity-75"
+                            className="inline-flex text-white items-center px-4 py-1 sm:px-6 sm:py-3 font-medium bg-indigo-500 rounded-sm hover:opacity-75"
                             to="/"
                         >
                            <BiLogoPlayStore  size={40} />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF,FaGithub , FaTwitter,FaDiscord, FaDribbble } from 'react-icons/fa6';
+import { FaFacebookF, FaGithub, FaTwitter, FaDiscord, FaDribbble } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
@@ -15,16 +15,16 @@ export default function Footer() {
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                <Link to="/"  >
+                                    <li className="mb-4 ">
                                         Home
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/about" className="hover:underline">
+                                    </li>
+                                </Link>
+                                <Link to="/about" >
+                                    <li className='mb-4'>
                                         About
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                         <div>
@@ -40,26 +40,26 @@ export default function Footer() {
                                         Github
                                     </a>
                                 </li>
-                                <li>
-                                    <Link to="/discord" className="hover:underline">
+                                <Link to="/discord" >
+                                    <li >
                                         Discord
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
                             <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
+                                <Link to="/" >
+                                    <li className="mb-4 ">
                                         Privacy Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="#" className="hover:underline">
+                                    </li>
+                                </Link>
+                                <Link to="/" >
+                                    <li >
                                         Terms &amp; Conditions
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                     </div>
@@ -75,16 +75,16 @@ export default function Footer() {
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         <Link to="" className="text-gray-500 hover:text-indigo-500">
-                           <FaFacebookF size={20} />
+                            <FaFacebookF size={20} />
                         </Link>
                         <Link to="" className="text-gray-500 hover:text-indigo-500">
-                          <FaDiscord size={20} />
+                            <FaDiscord size={20} />
                         </Link>
                         <Link to="" className="text-gray-500 hover:text-indigo-500">
-                          <FaTwitter size={20} />
+                            <FaTwitter size={20} />
                         </Link>
                         <Link to="" className="text-gray-500 hover:text-indigo-500">
-                           <FaGithub size={20} />
+                            <FaGithub size={20} />
                         </Link>
                         <Link to="" className="text-gray-500 hover:text-indigo-500">
                             <FaDribbble size={20} />
