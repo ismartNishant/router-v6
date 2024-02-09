@@ -13,8 +13,10 @@ import Contactus from './Components/Contactus';
 import Github from './Components/Github';
 import PageNotFound from './Components/PageNotFound';
 import Faq from './Components/Faq';
-import Careers, { carrersLoader } from './Components/Careers';
-import CareersDetails, { CareersDeailsLoader } from './Components/CareersDetails';
+import Careers, { carrersLoader } from './Components/Careers/Careers';
+import CareersDetails, { CareersDeailsLoader } from './Components/Careers/CareersDetails';
+import User from './Components/User';
+import CareersError from './Components/Careers/CareersError';
 
 
 function App() {
@@ -23,18 +25,22 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout />} >
+
         <Route index element={<Home />} />
         <Route path='/about' element={<AboutUs />}> </Route>
         <Route path='/contact' element={<Contactus />}> </Route>
         <Route path='/github' element={<Github />}> </Route>
-        <Route path='*' element={<PageNotFound />} />
+
+        {/* //error route */}
+
+        <Route path='user/:userid' element={<User />} />
 
         <Route path='/help' element={<HelpLayout />}>
           <Route path='/help/faq' element={<Faq />} />
           <Route path='/help/contact' element={<Contactus />} />
         </Route>
 
-        <Route path='/Careers' element={<CareersLayout />}>
+        <Route path='/Careers' element={<CareersLayout />} errorElement={<CareersError />}>
           <Route
             index
             element={<Careers />}
@@ -42,10 +48,12 @@ function App() {
           />
           <Route
             path=':id'
+
             element={<CareersDetails />}
-            loader={ CareersDeailsLoader}
+            loader={CareersDeailsLoader}
           />
         </Route>
+        <Route path='*' element={<PageNotFound />} />
 
       </Route>
     )

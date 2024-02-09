@@ -1,11 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 
 export interface CareerType {
-  id:  string ;
+  id: string;
   jobTitle: string;
   company: { companyId: number; companyName: string };
   skills: string[];
-  formattedAddress ?: string;
+  formattedAddress?: string;
 }
 
 const Careers = () => {
@@ -34,5 +34,8 @@ export default Careers;
 // eslint-disable-next-line react-refresh/only-export-components
 export const carrersLoader = async () => {
   const res = await fetch("http://localhost:4000/careers");
+  if (!res.ok) {
+    throw Error("Could not fetch career")
+  }
   return res.json()
 }
